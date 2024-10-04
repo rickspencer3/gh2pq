@@ -5,23 +5,10 @@ import pandas as pd
 import fastparquet as fp
 import os
 
-token = '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'
+token = ''
 headers = {'Authorization': f'token {token}', 'Accept': 'application/vnd.github.v3.star+json' }
 
-organizations = [
-                #  'uyuni-project',
-                #  'opensuse',
-                #  'suse',
-                #  'os-autoinst',
-                #  'rancher',
-                 'longhorn',
-                 'k3s-io',
-                 'kubewarden',
-                 'harvester',
-                 'neuvector',
-                 'opinio',
-                 'rancher-sandbox'
-                 ]
+organizations = []
 
 def get_stargazers_page(page=1, organization=None, repo=None):
     url = f'https://api.github.com/repos/{organization}/{repo}/stargazers'
