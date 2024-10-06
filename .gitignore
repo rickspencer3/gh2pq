@@ -1,0 +1,47 @@
+# Ignore the .parquet files
+*.parquet
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore scratch files
+scratch.py
+
+# Ignore graphs directory
+graphs/
+
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore virtual environment directories
+venv/
+env/
+.venv/
+.env/
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore compiled C extensions
+*.so
+
+# Ignore test logs and reports
+.coverage
+.tox/
+.nox/
+*.log
+
+# Ignore package files
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Ignore environment variables file
+.env
