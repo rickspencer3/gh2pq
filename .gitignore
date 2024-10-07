@@ -10,6 +10,9 @@ scratch.py
 # Ignore graphs directory
 graphs/
 
+# ignore token file
+.ghtoken
+
 # Ignore Python bytecode
 __pycache__/
 *.py[cod]
