@@ -17,6 +17,14 @@ except NameError:
 
 organizations = []
 
+try:
+    if not organizations:
+        raise ValueError("Organizations list is empty")
+except (NameError, ValueError):
+    # If 'organizations' is not defined or is empty, read it from a file
+    with open('organizations.txt', 'r') as file:
+        organizations = [line.strip() for line in file if line.strip()]
+
 def get_stargazers_page(page=1, organization=None, repo=None):
     url = f'https://api.github.com/repos/{organization}/{repo}/stargazers'
     params = {
