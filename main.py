@@ -8,6 +8,13 @@ import os
 token = ''
 headers = {'Authorization': f'token {token}', 'Accept': 'application/vnd.github.v3.star+json' }
 
+try:
+    token
+except NameError:
+    # If 'token' is not defined, read it from the .ghtoken file
+    with open('~/.ghtoken', 'r') as file:
+        token = file.read().strip()  # Read and strip whitespace
+
 organizations = []
 
 def get_stargazers_page(page=1, organization=None, repo=None):
