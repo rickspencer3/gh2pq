@@ -13,6 +13,9 @@ graphs/
 # ignore token file
 .ghtoken
 
+# ignore orgnaizations list
+organizations.txt
+
 # Ignore Python bytecode
 __pycache__/
 *.py[cod]
