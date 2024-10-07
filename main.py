@@ -8,7 +8,22 @@ import os
 token = ''
 headers = {'Authorization': f'token {token}', 'Accept': 'application/vnd.github.v3.star+json' }
 
+try:
+    token
+except NameError:
+    # If 'token' is not defined, read it from the .ghtoken file
+    with open('~/.ghtoken', 'r') as file:
+        token = file.read().strip()  # Read and strip whitespace
+
 organizations = []
+
+try:
+    if not organizations:
+        raise ValueError("Organizations list is empty")
+except (NameError, ValueError):
+    # If 'organizations' is not defined or is empty, read it from a file
+    with open('organizations.txt', 'r') as file:
+        organizations = [line.strip() for line in file if line.strip()]
 
 def get_stargazers_page(page=1, organization=None, repo=None):
     url = f'https://api.github.com/repos/{organization}/{repo}/stargazers'
